@@ -3,14 +3,14 @@
                <a href="index.html">
                <div class="iq-light-logo">
                   <div class="iq-light-logo">
-                     <img src="images/logo.gif" class="img-fluid" alt="">
+                     <img src="{{asset('images/logo.gif')}}" class="img-fluid" alt="">
                    </div>
                      <div class="iq-dark-logo">
-                        <img src="images/logo-dark.gif" class="img-fluid" alt="">
+                        <img src="{{asset('images/logo-dark.gif')}}" class="img-fluid" alt="">
                      </div>
                </div>
                <div class="iq-dark-logo">
-                  <img src="images/logo-dark.gif" class="img-fluid" alt="">
+                  <img src="{{asset('images/logo-dark.gif')}}" class="img-fluid" alt="">
                </div>
                <span>Vito</span>
                </a>
@@ -28,18 +28,22 @@
                   <ul id="iq-sidebar-toggle" class="iq-menu">
                      <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Home</span></li>
                      <li class="active">
-                        <a href="index.html" class="iq-waves-effect"><i class="ri-home-4-line"></i><span>Dashboard</span></a>
+                        <a href="{{ route('home') }}" class="iq-waves-effect"><i class="ri-home-4-line"></i><span>Dashboard</span></a>
                      </li>
                      <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Apps</span></li>
                      
-                     <li><a href="todo.html" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Todo</span></a></li>
+                     <li><a href="{{ route('deliverypersons.index') }}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Delivery_person</span></a></li>
                      <li>
                         <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                           <li><a href="profile.html"><i class="ri-profile-line"></i>User Profile</a></li>
-                           <li><a href="profile-edit.html"><i class="ri-file-edit-line"></i>User Edit</a></li>
-                           <li><a href="add-user.html"><i class="ri-user-add-line"></i>User Add</a></li>
-                           <li><a href="user-list.html"><i class="ri-file-list-line"></i>User List</a></li>
+                           <li><a href="{{ route('users.create') }}"><i class="ri-user-add-line"></i>User Add</a></li>
+                           <li><a href="{{ route('users.index') }}"><i class="ri-file-list-line"></i>User List</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>Orders</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                           <li><a href="profile.html"><i class="ri-profile-line"></i>List</a></li>
                         </ul>
                      </li>
                      <li><a href="calendar.html" class="iq-waves-effect"><i class="ri-calendar-2-line"></i><span>Calendar</span></a></li>
@@ -214,7 +218,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul class="navbar-nav ml-auto navbar-list">
                         <li class="nav-item">
-                           <a class="search-toggle iq-waves-effect language-title" href="#"><img src="images/small/flag-01.png" alt="img-flaf" class="img-fluid mr-1" style="height: 16px; width: 16px;" /> English <i class="ri-arrow-down-s-line"></i></a>
+                           <a class="search-toggle iq-waves-effect language-title" href="#"><img src="{{asset('images/small/flag-01.png')}}" alt="img-flaf" class="img-fluid mr-1" style="height: 16px; width: 16px;" /> English <i class="ri-arrow-down-s-line"></i></a>
                            <div class="iq-sub-dropdown">
                               <a class="iq-sub-card" href="#"><img src="images/small/flag-02.png" alt="img-flaf" class="img-fluid mr-2" />French</a>
                               <a class="iq-sub-card" href="#"><img src="images/small/flag-03.png" alt="img-flaf" class="img-fluid mr-2" />Spanish</a>
@@ -224,7 +228,7 @@
 
                            </div>
                         </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                           <form id="logout-form" class="pt-3" action="{{ route('logout') }}" method="POST">
                               @csrf
                               <button class="btn btn-primary" type="submit">logout</button>
                            </form>
@@ -243,7 +247,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/01.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Emma Watson Nik</h6>
@@ -255,7 +259,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/02.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">New customer is join</h6>
@@ -267,7 +271,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/03.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Two customer is left</h6>
@@ -279,7 +283,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/04.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">New Mail from Fenny</h6>
@@ -306,7 +310,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/01.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/01.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Nik Emma Watson</h6>
@@ -317,7 +321,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/02.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/02.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
@@ -328,7 +332,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/03.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/03.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Why do we use it?</h6>
@@ -339,7 +343,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/04.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/04.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Variations Passages</h6>
@@ -350,7 +354,7 @@
                                     <a href="#" class="iq-sub-card" >
                                        <div class="media align-items-center">
                                           <div class="">
-                                             <img class="avatar-40 rounded" src="images/user/05.jpg" alt="">
+                                             <img class="avatar-40 rounded" src="{{asset('images/user/05.jpg')}}" alt="">
                                           </div>
                                           <div class="media-body ml-3">
                                              <h6 class="mb-0 ">Lorem Ipsum generators</h6>
@@ -367,10 +371,10 @@
                   <ul class="navbar-list">
                      <li>
                         <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center bg-primary rounded">
-                           <img src="images/user/1.jpg" class="img-fluid rounded mr-3" alt="user">
+                           <img src="{{asset('images/user/1.jpg')}}" class="img-fluid rounded mr-3" alt="user">
                            <div class="caption">
-                              <h6 class="mb-0 line-height text-white">Nik jone</h6>
-                              <span class="font-size-12 text-white">Available</span>
+                              <h6 class="mb-0 line-height text-white">{{Auth::user()->last_name}}</h6>
+                              <span class="font-size-12 text-white">{{Auth::user()->email}}</span>
                            </div>
                         </a>
                         <div class="iq-sub-dropdown iq-user-dropdown">

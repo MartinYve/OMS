@@ -23,6 +23,7 @@
 
 </head>
 <body>
+
 <div id="loading">
          <div id="loading-center">
          </div>
@@ -38,6 +39,8 @@
         
       @include('includes.elements')
       @include('includes.Footer')
+
+      @include('sweetalert::alert')
         <script src="{{asset('js/jquery.min.js')}}"></script>
       
       <script src="{{asset('js/popper.min.js')}}"></script>
